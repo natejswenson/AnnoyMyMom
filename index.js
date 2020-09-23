@@ -2,7 +2,7 @@
 
 'use strict';
 const Alexa = require('alexa-sdk');
-let APP_ID = proccess.env.APP_ID;
+let APP_ID = process.env.APP_ID;
 
 const SKILL_NAME = 'Annoy my Mom';
 //const GET_FACT_MESSAGE = "Here's your fact: ";
