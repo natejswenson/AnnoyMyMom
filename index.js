@@ -22,10 +22,10 @@ const card = 'annoy you agin later!';
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
 //=========================================================================================================================================
 const data = [
-    'dad'+time+'mom'+time+ 'mom' + time + 'mom' + time + 'mom' + time + 'mom' + time + 'mom' + time + 'mom',
-    'dad'+time+'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy',
-    'dad'+time+'mom'+time+ 'mom' + time+'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mama'+time+ 'mama'+time+ 'mama',
-    'dad'+time+ 'mama'+time+ 'mama'+ time + 'mama'+time+ 'mama'+time+ 'mama' + time + 'mama'+time+ 'mama'+time+ 'mama'
+    'mum'+time+'mom'+time+ 'mom' + time + 'mom' + time + 'mom' + time + 'mom' + time + 'mom' + time + 'mom',
+    'mum'+time+'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mommy',
+    'mom'+time+'mom'+time+ 'mom' + time+'mommy'+time+ 'mommy'+time+ 'mommy'+time+ 'mama'+time+ 'mama'+time+ 'mama',
+    'mommy'+time+ 'mama'+time+ 'mama'+ time + 'mama'+time+ 'mama'+time+ 'mama' + time + 'mama'+time+ 'mama'+time+ 'mama'
 ];
 
 //=========================================================================================================================================
