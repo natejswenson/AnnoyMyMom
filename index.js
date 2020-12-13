@@ -23,12 +23,6 @@ var music = [
     f
 ];   
 
-var random =function getRandomItem(array) {
-
-    let i = 0;
-    i = Math.floor(Math.random() * array.length);
-    return (i);
-};
 
 const handlers = {
     'LaunchRequest': function () {
@@ -36,17 +30,12 @@ const handlers = {
     },
     'annoymyMomIntent': function () {
         const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
-        const randomFact = factArr[factIndex];
+        const factIndex = Math.floor(Math.random() * music.length);
+        const randomFact = music[factIndex];
         const speechOutput = randomFact;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
-    }, function () {
-        const speechOutput = HELP_MESSAGE;
-        const reprompt = HELP_REPROMPT;
-        this.response.speak(speechOutput).listen(reprompt);
-        this.emit(':responseReady');
-    },
+    }, 
     'AMAZON.CancelIntent': function () {
         this.response.speak(STOP_MESSAGE);
         this.emit(':responseReady');
