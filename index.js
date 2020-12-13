@@ -10,15 +10,25 @@ const s3SigV4Client = new AWS.S3({
 });
 
 
-  function  getS3PreSignedUrl(s3ObjectKey) {
-        const bucketName = process.env.S3_PERSISTENCE_BUCKET;
-        const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
-            Bucket: bucketName,
-            Key: s3ObjectKey,
-            Expires: 60*1 // the Expires is capped for 1 minute
-        });
-        console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`);
-        return s3PreSignedUrl;
+  function  getS3PreSignedUrl() {
+    const arr  = [
+        "r1.m4a",
+        "r2.m4a",
+       "r3.m4a",
+       "r4.m4a",
+       "r5.m4a"
+    ]
+    const annoyIndex= Math.floor(Math.random() * arr.length)
+    const bucketName = process.env.S3_PERSISTENCE_BUCKET;
+    const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
+        Bucket: bucketName,
+        Key: annoyIndex,
+        Expires: 60*1 // the Expires is capped for 1 minute
+    });
+        
+    const audioUrl = s3PreSignedUrl.replace(/&/g,'&amp;');
+
+        return audioUrl
     }
 
 const SKILL_NAME = 'Annoy my Mom';
@@ -28,26 +38,20 @@ const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'but mommy...why';
 const time ='<break time=".5s"/>';
 const card = 'annoy you agin later!';
-const a  = getS3PreSignedUrl("r1.m4a");
-const b = getS3PreSignedUrl("r2.m4a");
-const c = getS3PreSignedUrl("r3.m4a");
-const d = getS3PreSignedUrl("r4.m4a");
-const e = getS3PreSignedUrl("r5.m4a");
 
 
 const data = [
     a,b,c,d,e
 ];
-
+;
+const annoyance = arr[annoyIndex];
 const handlers = {
     'LaunchRequest': function () {
         this.emit('annoymyMomIntent');
     },
     'annoymyMomIntent': function () {
-        const arr= data;
-        const annoyIndex= Math.floor(Math.random() * factArr.length);
-        const annoyance = arr[annoyIndex];
-        const speechOutput = annoyance;
+      
+        const speechOutput =  <audio src={getS3PreSignedUrl}/>;
 
         this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
