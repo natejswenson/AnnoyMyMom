@@ -19,10 +19,10 @@ const d = 'mama';
 const e = 'please mommy please'
 const f ='<audio src="https://s3.amazonaws.com/alexa2020/r1.m4a"/>';
 var music = [ 
-    '<audio src="' + S3 + S31 +'"/>'
-    //'<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1ev1rj4.mp3"/>',
-    //'<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1kmqfdc.mp3"/>',
-    //'<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-4k1rtz.mp3"/>'
+    '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-du6uum.mp3"/>',
+    '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1ev1rj4.mp3"/>',
+    '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1kmqfdc.mp3"/>',
+    '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-4k1rtz.mp3"/>'
 ];   
 '<img src="myfolder/' + myphoto + '" />'
 
