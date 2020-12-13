@@ -8,7 +8,6 @@ const SKILL_NAME = 'Annoy my Mom';
 const STOP_MESSAGE = 'but mommy...why';
 const a = util.getS3PreSignedUrl('converted_audio20201213-23634-4k1rtz.mp3')
 var music = [ 
-    `<audio src=${a}/>`,
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1ev1rj4.mp3"/>',
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1kmqfdc.mp3"/>',
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-4k1rtz.mp3"/>'
