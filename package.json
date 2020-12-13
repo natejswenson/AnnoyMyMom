@@ -4,6 +4,6 @@
   "private": true,
   "dependencies": {
     "alexa-sdk": "^1.0.25",
-    "aws-sdk": "2.796.0"
+    "aws-sdk": "^2.796.0"
   }
 }
