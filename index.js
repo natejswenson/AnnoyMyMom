@@ -14,10 +14,7 @@ const card = 'annoy you agin later!';
 
 
 
-var music = [   '<audio src="https://s3.amazonaws.com/alexa2020.r1.m4a"/>',
-                '<audio src="https://s3.amazonaws.com/alexa2020/r2.m4a/>',
-                '<audio src="https://s3.amazonaws.com/alexa2020/r3.m4a/>',
-                '<audio src="https://s3.amazonaws.com/alexa2020/r4.m4a"/>'
+var music = [   '<audio src="https://s3.amazonaws.com/alexa2020.r1.m4a.mp3"/>'
 ]
 //Set day and load variables
 
@@ -35,8 +32,6 @@ const handlers = {
     'annoymyMomIntent': function () {
       
         const speechOutput =  music[random(music)];
-
-        this.response.cardRenderer(SKILL_NAME, card);
         this.emit(':responseReady',speechOutput);
     },
     'AMAZON.HelpIntent': function () {
