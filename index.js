@@ -14,10 +14,10 @@ const card = 'annoy you agin later!';
 
 
 
-var music = [   '<audio src="https://alexa2020.s3.amazonaws.com/r1.m4a"/>',
-                '<audio src="https://alexa2020.s3.amazonaws.com/r12.m4a/>',
-                '<audio src="https://alexa2020.s3.amazonaws.com/r3.m4a/>',
-                '<audio src="https://alexa2020.s3.amazonaws.com/r4.m4a"/>'
+var music = [   '<audio src="https://s3.amazonaws.com/alexa2020.r1.m4a"/>',
+                '<audio src="https://s3.amazonaws.com/alexa2020/r2.m4a/>',
+                '<audio src="https://s3.amazonaws.com/alexa2020/r3.m4a/>',
+                '<audio src="https://s3.amazonaws.com/alexa2020/r4.m4a"/>'
 ]
 //Set day and load variables
 
