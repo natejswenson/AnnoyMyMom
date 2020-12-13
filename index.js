@@ -9,12 +9,10 @@ const SKILL_NAME = 'Annoy my Mom';
 const HELP_MESSAGE = 'mommy why do you not understand what i am meant to do';
 const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'but mommy...why';
-const time ='<break time=".5s"/>';
-const card = 'annoy you agin later!';
 
 
 
-var music = [   '<audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/>'
+var music = [   ' <audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/> '
 ]
 //Set day and load variables
 
@@ -32,7 +30,8 @@ const handlers = {
     'annoymyMomIntent': function () {
       
         const speechOutput =  music[random(music)];
-        this.emit(':responseReady',speechOutput);
+        this.response.speak(speechOutput)
+        this.emit(':responseReady');
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
