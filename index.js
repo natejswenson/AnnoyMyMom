@@ -34,7 +34,7 @@ const handlers = {
     },
     'annoymyMomIntent': function () {
       
-        const speechOutput =  music[random(music)];
+        const speechOutput = <audio src="https://s3.amazonaws.com/alexa2020.r1.m4a"/>;
 
         this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
