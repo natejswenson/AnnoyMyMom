@@ -23,15 +23,14 @@ var music = [
     f
 ];   
 
-
 const handlers = {
     'LaunchRequest': function () {
         this.emit('annoymyMomIntent');
     },
     'annoymyMomIntent': function () {
-        const factArr = data;
-        const factIndex = Math.floor(Math.random() * music.length);
-        const randomFact = music[factIndex];
+        const factArr = music;
+        const factIndex = Math.floor(Math.random() * factArr.length);
+        const randomFact = factArr[factIndex];
         const speechOutput = randomFact;
         this.response.speak(speechOutput);
         this.emit(':responseReady');
