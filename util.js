@@ -6,7 +6,7 @@ const s3SigV4Client = new AWS.S3({
 
 module.exports = {
     getS3PreSignedUrl(s3ObjectKey) {
-        const bucketName = process.env.S3_PERSISTENCE_BUCKET;
+        const bucketName = 'alexa2018';
         const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
             Bucket: bucketName,
             Key: s3ObjectKey,
