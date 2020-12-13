@@ -4,33 +4,6 @@
 const AWS = require('aws-sdk');
 const Alexa = require('alexa-sdk');
 let APP_ID = process.env.APP_ID;
-
-const s3SigV4Client = new AWS.S3({
-    signatureVersion: 'v4'
-});
-
-
-  function  getS3PreSignedUrl() {
-    const arr  = [
-        "r1.m4a",
-        "r2.m4a",
-       "r3.m4a",
-       "r4.m4a",
-       "r5.m4a"
-    ]
-    const annoyIndex= Math.floor(Math.random() * arr.length)
-    const bucketName = process.env.S3_PERSISTENCE_BUCKET;
-    const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
-        Bucket: bucketName,
-        Key: annoyIndex,
-        Expires: 60*1 // the Expires is capped for 1 minute
-    });
-        
-    const audioUrl = s3PreSignedUrl.replace(/&/g,'&amp;');
-
-        return audioUrl
-    }
-
 const SKILL_NAME = 'Annoy my Mom';
 //const GET_FACT_MESSAGE = "Here's your fact: ";
 const HELP_MESSAGE = 'mommy why do you not understand what i am meant to do';
@@ -40,18 +13,28 @@ const time ='<break time=".5s"/>';
 const card = 'annoy you agin later!';
 
 
-const data = [
-    a,b,c,d,e
-];
-;
-const annoyance = arr[annoyIndex];
+
+var music = [   '<audio src="https://alexa2020.s3.amazonaws.com/r1.m4a"/>',
+                '<audio src="https://alexa2020.s3.amazonaws.com/r12.m4a/>',
+                '<audio src="https://alexa2020.s3.amazonaws.com/r3.m4a/>',
+                '<audio src="https://alexa2020.s3.amazonaws.com/r4.m4a"/>'
+]
+//Set day and load variables
+
+var random =function getRandomItem(array) {
+
+    let i = 0;
+    i = Math.floor(Math.random() * array.length);
+    return (i);
+};
+
 const handlers = {
     'LaunchRequest': function () {
         this.emit('annoymyMomIntent');
     },
     'annoymyMomIntent': function () {
       
-        const speechOutput =  <audio src={getS3PreSignedUrl}/>;
+        const speechOutput =  music[random];
 
         this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
