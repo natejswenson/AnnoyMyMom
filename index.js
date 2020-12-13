@@ -34,11 +34,11 @@ const handlers = {
     },
     'annoymyMomIntent': function () {
       
-        const speechOutput = <audio src="https://s3.amazonaws.com/alexa2020.r1.m4a"/>;
+        const speechOutput =  music[random(music)];
 
         this.response.cardRenderer(SKILL_NAME, card);
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
+
+        this.emit(':tell',speechOutput);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
