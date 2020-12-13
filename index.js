@@ -15,8 +15,8 @@ const d = 'mama';
 const e = 'please mommy please'
 const f ='<audio src="https://s3.amazonaws.com/alexa2020/r1.m4a"/>';
 var music = [ 
-    '<audio src="https://s3.amazonaws.com/alexa2018/602secRelaxing.mp3"/>',
-    '<audio src="https://s3.amazonaws.com/alexa2018/602secRelaxing.mp3"/>'
+    '<audio src="https://s3.amazonaws.com/alexa2020/r1.m4a"/>',
+    '<audio src="https://s3.amazonaws.com/alexa2020/r1.m4a"/>'
 ];   
 
 const handlers = {
