@@ -15,11 +15,8 @@ const d = 'mama';
 const e = 'please mommy please'
 const f =' <audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/> ';
 
-var music = [    
-    a + time + a + time + a + time + a + time + a + time + a + time + b + time + b,
-    a + time + b + time + b + time + b + time + c + time + d + time + a + time + b,
-    b + time + c + time + c + time + c + time + e + time + d + time + d + time + b,
-    c + time + b + time + c + time + b + time + a + time + e + time + b + time + b,
+var music = [ 
+    f,
     f
 ];   
 
