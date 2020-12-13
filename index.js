@@ -23,8 +23,7 @@ var music = [
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1ev1rj4.mp3"/>',
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1kmqfdc.mp3"/>',
     '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-4k1rtz.mp3"/>'
-];   
-'<img src="myfolder/' + myphoto + '" />'
+];  
 
 const handlers = {
     'LaunchRequest': function () {
