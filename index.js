@@ -37,8 +37,7 @@ const handlers = {
         const speechOutput =  music[random(music)];
 
         this.response.cardRenderer(SKILL_NAME, card);
-
-        this.emit(':tell',speechOutput);
+        this.emit(':responseReady',speechOutput);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
