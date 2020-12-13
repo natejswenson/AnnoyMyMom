@@ -1,8 +1,25 @@
 
 
 'use strict';
+const AWS = require('aws-sdk');
 const Alexa = require('alexa-sdk');
 let APP_ID = process.env.APP_ID;
+
+const s3SigV4Client = new AWS.S3({
+    signatureVersion: 'v4'
+});
+
+
+  function  getS3PreSignedUrl(s3ObjectKey) {
+        const bucketName = process.env.S3_PERSISTENCE_BUCKET;
+        const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
+            Bucket: bucketName,
+            Key: s3ObjectKey,
+            Expires: 60*1 // the Expires is capped for 1 minute
+        });
+        console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`);
+        return s3PreSignedUrl;
+    }
 
 const SKILL_NAME = 'Annoy my Mom';
 //const GET_FACT_MESSAGE = "Here's your fact: ";
@@ -11,18 +28,15 @@ const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'but mommy...why';
 const time ='<break time=".5s"/>';
 const card = 'annoy you agin later!';
-const a = 'mum';
-const b = 'mom';
-const c = 'mommy';
-const d = 'mama';
-const e = 'please mommy please'
+const a  = getS3PreSignedUrl("r1.m4a").replace(/&/g,'&amp;');
+const b = getS3PreSignedUrl("r2.m4a").replace(/&/g,'&amp;');
+const c = getS3PreSignedUrl("r3.m4a").replace(/&/g,'&amp;');
+const d = getS3PreSignedUrl("r4.m4a").replace(/&/g,'&amp;');
+const e = getS3PreSignedUrl("r5.m4a").replace(/&/g,'&amp;');
 
 
 const data = [
-    a + time + a + time + a + time + a + time + a + time + a + time + b + time + b,
-    a + time + b + time + b + time + b + time + c + time + d + time + a + time + b,,
-    b + time + c + time + c + time + c + time + e + time + d + time + d + time + b,,
-    c + time + b + time + c + time + b + time + a + time + e + time + b + time + b,
+    a,b,c,d,e
 ];
 
 const handlers = {
@@ -30,10 +44,10 @@ const handlers = {
         this.emit('annoymyMomIntent');
     },
     'annoymyMomIntent': function () {
-        const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
-        const randomFact = factArr[factIndex];
-        const speechOutput = randomFact;
+        const arr= data;
+        const annoyIndex= Math.floor(Math.random() * factArr.length);
+        const annoyance = arr[annoyIndex];
+        const speechOutput = annoyance;
 
         this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
