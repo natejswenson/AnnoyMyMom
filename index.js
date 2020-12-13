@@ -28,11 +28,11 @@ const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'but mommy...why';
 const time ='<break time=".5s"/>';
 const card = 'annoy you agin later!';
-const a  = getS3PreSignedUrl("r1.m4a").replace(/&/g,'&amp;');
-const b = getS3PreSignedUrl("r2.m4a").replace(/&/g,'&amp;');
-const c = getS3PreSignedUrl("r3.m4a").replace(/&/g,'&amp;');
-const d = getS3PreSignedUrl("r4.m4a").replace(/&/g,'&amp;');
-const e = getS3PreSignedUrl("r5.m4a").replace(/&/g,'&amp;');
+const a  = getS3PreSignedUrl("r1.m4a");
+const b = getS3PreSignedUrl("r2.m4a");
+const c = getS3PreSignedUrl("r3.m4a");
+const d = getS3PreSignedUrl("r4.m4a");
+const e = getS3PreSignedUrl("r5.m4a");
 
 
 const data = [
