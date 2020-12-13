@@ -14,7 +14,7 @@ const card = 'annoy you agin later!';
 
 
 
-var music = [   '<audio src="https://s3.amazonaws.com/alexa2020.r1.m4a.mp3"/>'
+var music = [   '<audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/>'
 ]
 //Set day and load variables
 
