@@ -1,7 +1,4 @@
-
-
 'use strict';
-const AWS = require('aws-sdk');
 const Alexa = require('alexa-sdk');
 let APP_ID = process.env.APP_ID;
 const SKILL_NAME = 'Annoy my Mom';
@@ -14,8 +11,6 @@ const STOP_MESSAGE = 'but mommy...why';
 
 var music = [   ' <audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/> '
 ]
-//Set day and load variables
-
 var random =function getRandomItem(array) {
 
     let i = 0;
@@ -29,8 +24,8 @@ const handlers = {
     },
     'annoymyMomIntent': function () {
       
-        const speechOutput =  music[random(music)];
-        this.response.speak(speechOutput)
+        const speechOutput =  '<audio src="https://www.jovo.tech/audio/Jz6MXZgh-r1m4a.mp3/>' ;
+        this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'AMAZON.HelpIntent': function () {
