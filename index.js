@@ -39,13 +39,11 @@ const handlers = {
         const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = randomFact;
-        this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     }, function () {
         const speechOutput = HELP_MESSAGE;
         const reprompt = HELP_REPROMPT;
-
         this.response.speak(speechOutput).listen(reprompt);
         this.emit(':responseReady');
     },
