@@ -34,7 +34,7 @@ const handlers = {
     },
     'annoymyMomIntent': function () {
       
-        const speechOutput =  music[random];
+        const speechOutput =  music[random(music)];
 
         this.response.cardRenderer(SKILL_NAME, card);
         this.response.speak(speechOutput);
