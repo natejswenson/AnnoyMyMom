@@ -2,11 +2,15 @@
 const Alexa = require('alexa-sdk');
 const util = require('util');
 let APP_ID = process.env.APP_ID;
-let AONE = process.env.S3_PERSISTENCE_BUCKET_AUDIO_1
+let S31 = process.env.S3_1
+let S32 = process.env.S3_2
+let S33 = process.env.S3_3
 const SKILL_NAME = 'Annoy my Mom';
 const STOP_MESSAGE = 'but mommy...why';
-var music = AONE;
-//[ 
+var music =[ 
+    S31,
+    S32,
+    S33];
   //  '<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1ev1rj4.mp3"/>',
     //'<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-1kmqfdc.mp3"/>',
     //'<audio src="https://alexa2018.s3.amazonaws.com/converted_audio20201213-23634-4k1rtz.mp3"/>'
