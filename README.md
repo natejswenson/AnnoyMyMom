@@ -9,7 +9,7 @@ Alexa will annoy you momentarily.
 * New to Version 1.2 the skill has got much more Annoying
 * For Developers wanting to use this As a template I highly encourage it! 
     - You will need a policy that gives your Lambda function rights to S3, Lambda, and CLoudWatch
-```javascrips
+```javascript
 //proccess.env variables are set in the labda function, not github actions use the format
 // '<audio src="https://{YOUR_S3_BUCKET}.s3.amazonaws.com/{yourfile.mp3}"/>'
 let S31 = process.env.S3_1
